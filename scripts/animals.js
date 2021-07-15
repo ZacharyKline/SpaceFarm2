@@ -7,7 +7,7 @@ class Animal {
         this.numOfA = 0
         this.organs = 0
         this.hide = 0
-        this.brain = 0
+        this.essence = 0
     }
     makeSpot() {
         let animalPen = document.getElementById('animalPen')
@@ -24,13 +24,20 @@ class Animal {
     makeAltar() {
         let altarSpot = document.getElementById('altarSpot')
         let altarCard = document.createElement('div')
+        let sacButton = document.createElement('button')
+        sacButton.innerHTML = 'Sacrifice Animal'
         altarCard.classList.add('altarCard')
+        sacButton.addEventListener('click', function () {
+            sacrificeAnimal(sheep)
+        })
         altarCard.innerHTML = `
          <strong>${this.name} Parts:</strong>
          <p id='${this.name}Organs'>Organs: ${this.organs}</p>
          <p id='${this.name}Hides'>Hides: ${this.hide}</p>
-         <p id='${this.name}Brains'>Brains: ${this.brain}</p>
+         <p id='${this.name}essences'>Essences: ${this.essence}</p>
+
         `
+        altarCard.append(sacButton)
         altarSpot.append(altarCard)
     }
     makeWool() {
@@ -44,34 +51,9 @@ class Animal {
         return true
     }
     }
-    sacrificeAnimal() {
-        if (this.numOfA > sacAmount) {
-            this.numOfA -= sacAmount;
-            let toThePowerOf = Math.pow(1.15, this.numOfA - 1);
-            this.price = Math.trunc(this.price + (this.price * 0.1) * toThePowerOf)
-            document.getElementById(`${this.name}Owned`).innerHTML = `Owned: ${commaIncluded(this.numOfA)}`
-            document.getElementById(`${this.name}Cost`).innerHTML = `Cost: ${commaIncluded(this.price)}`
-            bloodCount += 1;
-            let randomChance = Math.floor(Math.random() * 100) + 1
-            if (randomChance > 50) {
-                this.organs += 1
-            } else {
-                this.organs += 2
-            }
-            if (randomChance >= 65) {
-                this.hide += 1
-         		}
-            if (randomChance >= 80) {
-                    this.brain += 1
-                }
-
-        }
-        document.getElementById(`${this.name}Organs`).innerHTML = this.organs
-        document.getElementById(`${this.name}Hides`).innerHTML = this.hide
-        document.getElementById(`${this.name}Brains`).innerHTML = this.brain
-        }
     buyAnimal() {
         if (woolCount >= this.price) {
+            console.log(this.price)
             woolCount -= this.price
             let toThePowerOf = Math.pow(1.15, this.numOfA);
             this.price = Math.trunc(this.price + (this.price * 0.1) * toThePowerOf)
