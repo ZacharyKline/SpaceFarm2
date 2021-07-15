@@ -42,4 +42,4 @@ function swapHeader() {
 
 swapHeader()
 
-const headerInterval = setInterval(swapHeader, 5000)
+const headerInterval = setInterval(swapHeader, 15000)

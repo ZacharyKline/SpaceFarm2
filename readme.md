@@ -103,6 +103,7 @@ Stingers - 60% CPS
 Honey Combs - 50% CPS
 Royal Jelly - 10% CPS
 A Script to A Bee Movie - 1% CPS
+
 ========================================================
 
 LABORATORY
