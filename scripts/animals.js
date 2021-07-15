@@ -1,10 +1,13 @@
-// Creating the basic animals
+// Class for the animals, and common methods
 class Animal {
     constructor(name, price, wool) {
         this.name = name
         this.price = price
         this.wool = wool
         this.numOfA = 0
+        this.organs = 0
+        this.hide = 0
+        this.brain = 0
     }
     makeSpot() {
         let animalPen = document.getElementById('animalPen')
@@ -18,6 +21,18 @@ class Animal {
         `
         animalPen.append(animalCard)
     }
+    makeAltar() {
+        let altarSpot = document.getElementById('altarSpot')
+        let altarCard = document.createElement('div')
+        altarCard.classList.add('altarCard')
+        altarCard.innerHTML = `
+         <strong>${this.name} Parts:</strong>
+         <p id='${this.name}Organs'>Organs: ${this.organs}</p>
+         <p id='${this.name}Hides'>Hides: ${this.hide}</p>
+         <p id='${this.name}Brains'>Brains: ${this.brain}</p>
+        `
+        altarSpot.append(altarCard)
+    }
     makeWool() {
         woolCount = woolCount + (this.numOfA * this.wool)
         woolCounter.innerHTML = `Wool Count: ${commaIncluded(woolCount)}`
@@ -25,9 +40,36 @@ class Animal {
     checkUnlock() {
     if (woolCount > this.price) {
         this.makeSpot()
+        this.makeAltar()
         return true
     }
     }
+    sacrificeAnimal() {
+        if (this.numOfA > sacAmount) {
+            this.numOfA -= sacAmount;
+            let toThePowerOf = Math.pow(1.15, this.numOfA - 1);
+            this.price = Math.trunc(this.price + (this.price * 0.1) * toThePowerOf)
+            document.getElementById(`${this.name}Owned`).innerHTML = `Owned: ${commaIncluded(this.numOfA)}`
+            document.getElementById(`${this.name}Cost`).innerHTML = `Cost: ${commaIncluded(this.price)}`
+            bloodCount += 1;
+            let randomChance = Math.floor(Math.random() * 100) + 1
+            if (randomChance > 50) {
+                this.organs += 1
+            } else {
+                this.organs += 2
+            }
+            if (randomChance >= 65) {
+                this.hide += 1
+         		}
+            if (randomChance >= 80) {
+                    this.brain += 1
+                }
+
+        }
+        document.getElementById(`${this.name}Organs`).innerHTML = this.organs
+        document.getElementById(`${this.name}Hides`).innerHTML = this.hide
+        document.getElementById(`${this.name}Brains`).innerHTML = this.brain
+        }
     buyAnimal() {
         if (woolCount >= this.price) {
             woolCount -= this.price
@@ -37,9 +79,7 @@ class Animal {
             document.getElementById(`${this.name}Owned`).innerHTML = `Owned: ${commaIncluded(this.numOfA)}`
             document.getElementById(`${this.name}Cost`).innerHTML = `Cost: ${commaIncluded(this.price)}`
         }
-
     }
-
 }
 //Lets create some animals!
 let sheep = new Animal('Sheep', 20, 1)
