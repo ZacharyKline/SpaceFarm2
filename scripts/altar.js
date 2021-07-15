@@ -1,7 +1,7 @@
 function sacrificeAnimal(animal) {
         if (animal.numOfA >= sacAmount) {
             animal.numOfA -= sacAmount;
-            let toThePowerOf = Math.pow(1.15, (animal.numOfA - 1));
+            let toThePowerOf = Math.pow(1.15, animal.numOfA - 1);
             animal.price = Math.trunc(animal.increase * toThePowerOf)
             document.getElementById(`${animal.name}Owned`).innerHTML = `Owned: ${commaIncluded(animal.numOfA)}`
             document.getElementById(`${animal.name}Cost`).innerHTML = `Cost: ${commaIncluded(animal.price)}`
@@ -23,4 +23,5 @@ function sacrificeAnimal(animal) {
         document.getElementById(`${animal.name}Organs`).innerHTML = `Organs: ${animal.organs}`
         document.getElementById(`${animal.name}Hides`).innerHTML = `Hides: ${animal.hide}`
         document.getElementById(`${animal.name}essences`).innerHTML = `Essences: ${animal.essence}`
-        }
+}
+        

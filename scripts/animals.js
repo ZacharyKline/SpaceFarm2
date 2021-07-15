@@ -28,8 +28,8 @@ class Animal {
         let sacButton = document.createElement('button')
         sacButton.innerHTML = 'Sacrifice Animal'
         altarCard.classList.add('altarCard')
-        sacButton.addEventListener('click', function () {
-            sacrificeAnimal(sheep)
+        sacButton.addEventListener('click',() => {
+            sacrificeAnimal(this)
         })
         altarCard.innerHTML = `
          <strong>${this.name} Parts:</strong>
