@@ -1,4 +1,13 @@
 .animalCard {
     background-color: aquamarine;
     width: 15vw;
+    padding: 2vh;
+    margin: 1vh;
+}
+.altarCard {
+    background-color: rgb(135, 34, 18);
+    width: 15vw;
+    padding: 10px;
+    margin: 1vh;
+
 }
