@@ -39,7 +39,6 @@ class Animal {
          <p id='${this.name}Organs'>Organs: ${this.organs}</p>
          <p id='${this.name}Hides'>Hides: ${this.hide}</p>
          <p id='${this.name}essences'>Essences: ${this.essence}</p>
-
         `
         altarCard.append(sacButton)
         altarSpot.append(altarCard)

@@ -22,3 +22,7 @@
     display: flex;
     flex-wrap: wrap;
 }
+.used {
+	background-color: grey !important;
+	border-style: outset;
+}
