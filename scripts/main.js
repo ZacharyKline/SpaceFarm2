@@ -2,9 +2,10 @@
 let woolCounter = document.getElementById('woolCounter')
 let commaIncluded = value => value.toLocaleString()
 let woolCount = 0;
-let bloodCount = 0
-let timeValue = 1000
-let sacAmount = 1
+let bloodCount = 0;
+let totalClicks = 0;
+let timeValue = 1000;
+let sacAmount = 1;
 
 
 
@@ -46,3 +47,4 @@ function swapHeader() {
 swapHeader()
 
 const headerInterval = setInterval(swapHeader, 15000)
+

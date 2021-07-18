@@ -14,6 +14,7 @@ class Animal {
         let animalPen = document.getElementById('animalPen')
         let animalCard = document.createElement('div')
         animalCard.classList.add('animalCard')
+        animalCard.classList.add('card')
         animalCard.innerHTML = `
         <strong>${this.name}</strong>
         <p id="${this.name}Owned">Owned: ${commaIncluded(this.numOfA)}</p>
@@ -28,6 +29,8 @@ class Animal {
         let sacButton = document.createElement('button')
         sacButton.innerHTML = 'Sacrifice Animal'
         altarCard.classList.add('altarCard')
+        altarCard.classList.add('card')
+
         sacButton.addEventListener('click',() => {
             sacrificeAnimal(this)
         })
@@ -36,7 +39,6 @@ class Animal {
          <p id='${this.name}Organs'>Organs: ${this.organs}</p>
          <p id='${this.name}Hides'>Hides: ${this.hide}</p>
          <p id='${this.name}essences'>Essences: ${this.essence}</p>
-
         `
         altarCard.append(sacButton)
         altarSpot.append(altarCard)

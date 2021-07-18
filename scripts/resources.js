@@ -2,7 +2,7 @@ let shearButton = document.querySelector('#shearButton')
 shearButton.addEventListener('click', shearWool)
 
 function shearWool(event) {
-    console.log('clicky')
+    totalClicks += 1
     randomNum = Math.floor(Math.random() * 100)
     woolCount += 1
     woolCounter.innerHTML = `Wool Count: ${commaIncluded(woolCount)}`
