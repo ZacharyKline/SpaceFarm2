@@ -1,6 +1,7 @@
 let shearButton = document.querySelector('#shearButton')
 shearButton.addEventListener('click', shearWool)
 
+
 function shearWool(event) {
     totalClicks += 1
     randomNum = Math.floor(Math.random() * 100)
@@ -17,7 +18,17 @@ function animalAccumulator(animal) {
                 animalAccumulator(animal)
             }, (timeValue - animal.numOfA)/(animal.numOfA))
             // formula acquired from logistics function 
-        }
+}
+        
+function createPopUp(element, description) {
+    let popUpDiv = document.createElement('div')
+    element.classList.add('tooltip')
+    popUpDiv.innerHTML = description
+    popUpDiv.classList.add('tooltiptext')
+    element.append(popUpDiv)
+}
+
+
 animalAccumulator(sheep)
 animalAccumulator(show)
 animalAccumulator(shickens)
@@ -26,3 +37,5 @@ animalAccumulator(shigs)
 animalAccumulator(sheese)
 animalAccumulator(shucks)
 animalAccumulator(beeps)
+
+createPopUp(shearButton, 'penis')
