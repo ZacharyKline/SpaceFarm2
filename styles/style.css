@@ -1,4 +1,28 @@
+.card {
+    width: 15vw;
+    padding: 2vh;
+    margin: 1vh;
+}
+
 .animalCard {
     background-color: aquamarine;
-    width: 15vw;
+
+}
+.altarCard {
+    background-color: rgb(135, 34, 18);
+
+
+}
+
+.upgradeCard {
+    background-color: rgb(18, 135, 135);
+
+}
+#menuArea {
+    display: flex;
+    flex-wrap: wrap;
+}
+.used {
+	background-color: grey !important;
+	border-style: outset;
 }

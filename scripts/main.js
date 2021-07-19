@@ -2,7 +2,11 @@
 let woolCounter = document.getElementById('woolCounter')
 let commaIncluded = value => value.toLocaleString()
 let woolCount = 0;
-let timeValue = 1000
+let bloodCount = 0;
+let totalClicks = 0;
+let timeValue = 1000;
+let sacAmount = 1;
+
 
 
 // This function swaps out the header for the page with an array of random funny stuff I'm collecting. Remember to update the random num variable as funnyText is added
@@ -42,4 +46,5 @@ function swapHeader() {
 
 swapHeader()
 
-const headerInterval = setInterval(swapHeader, 5000)
+const headerInterval = setInterval(swapHeader, 15000)
+
