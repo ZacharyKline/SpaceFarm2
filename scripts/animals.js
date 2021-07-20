@@ -1,9 +1,10 @@
 // Class for the animals, and common methods
 class Animal {
-    constructor(name, price, wool, increase) {
+    constructor(name, price, wool, increase, flavortext) {
         this.name = name
         this.price = price
         this.increase = increase
+        this.flavortext = flavortext
         this.wool = wool
         this.numOfA = 0
         this.organs = 0
@@ -13,14 +14,15 @@ class Animal {
     makeSpot() {
         let animalPen = document.getElementById('animalPen')
         let animalCard = document.createElement('div')
-        animalCard.classList.add('animalCard')
-        animalCard.classList.add('card')
         animalCard.innerHTML = `
         <strong>${this.name}</strong>
         <p id="${this.name}Owned">Owned: ${commaIncluded(this.numOfA)}</p>
         <button onClick="${this.name.toLowerCase()}.buyAnimal()">Buy ${this.name}</button>
         <p id="${this.name}Cost">Cost: ${commaIncluded(this.price)}</p>
         `
+        createPopUp(animalCard, this.flavortext)
+        animalCard.classList.add('animalCard')
+        animalCard.classList.add('card')
         animalPen.append(animalCard)
     }
     makeAltar() {
@@ -67,14 +69,14 @@ class Animal {
     }
 }
 //Lets create some animals!
-let sheep = new Animal('Sheep', 20, 1, 22)
-let show = new Animal('Show', 200, 10, 220)
-let shickens = new Animal('Shickens', 2000, 100, 2200)
-let shoats = new Animal('Shoats', 20000, 500, 22000)
-let shigs = new Animal('Shigs', 1000000, 3000, 1100000)
-let sheese = new Animal('Sheese', 10000000, 20000, 11000000)
-let shucks = new Animal('Shucks', 100000000, 100000, 100000000)
-let beeps = new Animal('Beeps', 1000000000, 2000000, 1000000000)
+let sheep = new Animal('Sheep', 20, 1, 22, "A normal sheep smuggled out from earth, won't stop bleeting")
+let show = new Animal('Show', 200, 10, 220, '')
+let shickens = new Animal('Shickens', 2000, 100, 2200, '')
+let shoats = new Animal('Shoats', 20000, 500, 22000, '')
+let shigs = new Animal('Shigs', 1000000, 3000, 1100000, '')
+let sheese = new Animal('Sheese', 10000000, 20000, 11000000, '')
+let shucks = new Animal('Shucks', 100000000, 100000, 100000000, '')
+let beeps = new Animal('Beeps', 1000000000, 2000000, 1000000000, '')
 
 
 //Intervals from each of the animals

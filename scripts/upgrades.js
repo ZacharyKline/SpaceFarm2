@@ -77,4 +77,4 @@ let sheepUp1 = new Upgrade('Copper Fleece', sheep, 10, 4, 1, 0, 10, 2, 001)
 
 const checkForUpgrade1 = setInterval(() => {
     if(sheepUp1.checkUnlock()) stop(checkForUpgrade1)
-}, 5000)
+}, 20000)

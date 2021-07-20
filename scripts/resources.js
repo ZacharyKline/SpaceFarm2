@@ -20,13 +20,6 @@ function animalAccumulator(animal) {
             // formula acquired from logistics function 
 }
         
-function createPopUp(element, description) {
-    let popUpDiv = document.createElement('div')
-    element.classList.add('tooltip')
-    popUpDiv.innerHTML = description
-    popUpDiv.classList.add('tooltiptext')
-    element.append(popUpDiv)
-}
 
 
 animalAccumulator(sheep)
@@ -38,4 +31,3 @@ animalAccumulator(sheese)
 animalAccumulator(shucks)
 animalAccumulator(beeps)
 
-createPopUp(shearButton, 'penis')

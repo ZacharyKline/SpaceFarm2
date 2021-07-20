@@ -44,6 +44,14 @@ function swapHeader() {
     
 }
 
+function createPopUp(element, description) {
+    let popUpDiv = document.createElement('div')
+    element.classList.add('tooltip')
+    popUpDiv.innerHTML = description
+    popUpDiv.classList.add('tooltiptext')
+    element.append(popUpDiv)
+}
+
 swapHeader()
 
 const headerInterval = setInterval(swapHeader, 15000)

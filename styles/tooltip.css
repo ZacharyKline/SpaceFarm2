@@ -1,7 +1,7 @@
+/* Precreated tooltip code taken from https://www.w3schools.com/css/css_tooltip.asp */
 /* Built in tooltip stuff for when we hover over elements*/
 .tooltip {
   position: relative;
-  display: inline-block;
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
@@ -10,7 +10,7 @@
   visibility: hidden;
   width: 120px;
   background-color: black;
-  color: #fff;
+  color: rgb(237, 209, 28);
   text-align: center;
   padding: 5px 0;
   border-radius: 4px;
@@ -27,7 +27,7 @@
 
 .tooltip .tooltiptext {
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 3s;
 }
 
 .tooltip:hover .tooltiptext {
